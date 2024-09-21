@@ -9,10 +9,13 @@
         :key="index"
         :to="item.href"
         class="link-item"
+        :style="{ color: isActive(item.href) ? '#079bee' : '' }"
       >
         {{ item.name }}
       </RouterLink>
-      <div style="position: relative"><Select></Select></div>
+      <div style="position: relative">
+        <Select></Select>
+      </div>
     </nav>
     <img
       @click.stop="handleToggleMenu"
@@ -20,18 +23,23 @@
       src="@/assets/icon/OpenMenu.svg"
       alt=""
     />
-    <div :class="{ toggle: isToggle }" class="header-popup">
+    <div class="header-popup" :class="{ toggle: isToggle }">
       <HeaderPopup @handleToggleMenu="handleToggleMenu" />
     </div>
   </header>
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import Select from "../common/Select.vue";
 import HeaderPopup from "../HeaderPopup.vue";
-
+import { RouterLink, useRoute } from "vue-router";
+const router = useRoute();
 const isToggle = ref(false);
+
+const isActive = (path) => {
+  return router.path === path;
+};
 
 const handleToggleMenu = () => {
   isToggle.value = !isToggle.value;
@@ -132,16 +140,18 @@ const dataHeader = ref([
   }
 
   .header-popup {
-    display: none;
-  }
-  .toggle {
-    display: block;
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    z-index: 3;
+  }
+  .toggle {
+    transform: translateX(0);
   }
 }
 </style>

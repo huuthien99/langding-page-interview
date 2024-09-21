@@ -52,7 +52,6 @@ img {
   color: #ffffff;
   font-family: "Montserrat";
   font-weight: 400;
-  font-style: italic;
   line-height: 19.6px;
 }
 </style>

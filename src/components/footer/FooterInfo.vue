@@ -73,7 +73,6 @@ import ArrowRight from "../../assets/icon/ArrowRight.vue";
 }
 p {
   color: #ffffff;
-  font-style: italic;
   font-weight: 400;
   font-family: "Montserrat";
   line-height: 20px;

@@ -14,6 +14,7 @@
       :key="index"
       @click="handleClick(item.href)"
       class="link-item"
+      :class="{ active: isActive(item.href) }"
     >
       {{ item.name }}
     </div>
@@ -26,6 +27,9 @@ import Select from "../components/common/Select.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+const isActive = (path) => {
+  return router.currentRoute.value.path === path;
+};
 
 const emit = defineEmits(["handleToggleMenu"]);
 
@@ -85,8 +89,7 @@ const dataHeader = ref([
   border-bottom: 1px solid #eeeeee;
 }
 
-.link-item:active {
-  animation-timing-function: ease-in;
-  animation-duration: 300ms;
+.active {
+  color: #079bee;
 }
 </style>

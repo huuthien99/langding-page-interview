@@ -39,6 +39,5 @@ p {
   text-align: center;
   font-weight: 400;
   color: #ffffff;
-  font-style: italic;
 }
 </style>

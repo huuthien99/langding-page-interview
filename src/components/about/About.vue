@@ -79,7 +79,6 @@ const dataInfo = ref([
 }
 
 .info-content__description {
-  font-style: italic;
   font-weight: 400;
   color: #757575;
   font-family: "Montserrat";

@@ -73,7 +73,6 @@ const handleClick = () => {
 
   .description {
     color: #ffffff;
-    font-style: italic;
     font-size: 18px;
     line-height: 22.68px;
     padding-bottom: 32px;

@@ -131,7 +131,6 @@ const gameList = ref([
 
 .game-description {
   font-family: "Montserrat";
-  font-style: italic;
   color: #757575;
   font-weight: 400;
   width: 860px;
